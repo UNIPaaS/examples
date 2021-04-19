@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Platform - Onboarding</title>
+</head>
+<body>
+<h1>Your Platform - Onboarding</h1>
+<div class="app-main"></div>
+<script type="text/javascript">
+(function(d, id) {
+  var s = d.createElement('script');
+  s.id = id;
+  s.type = 'application/javascript';
+  s.src = 'https://cdn.unipaas.com/onboarding-sandbox.js';
+  d.body.append(s);
+  s.onload = function() {
+    window.unipaas.onboarding.create(
+      {
+        accessToken: '{{VENDOR_ACCESS_TOKEN}}',
+        selector: '.app-main',
+      }, callback);
+  };
+}(document, 'unipaas-onboarding-sdk'));
+const callback = (data) => {
+  console.log('Callback', data);
+};
+</script>
+</body>
+</html>

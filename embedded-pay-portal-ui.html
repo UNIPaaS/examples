@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pay Portal</title>
+    <script type="application/javascript" src="https://cdn.unipaas.com/embedded-ui.js"></script>
+</head>
+<body>
+	<div id="pay_portal"></div>
+	<script type="text/javascript">
+	const components = unipaas.components("{{accessToken}}");
+	    const config = {
+	  	theme: {
+	    colors: { //optional
+	      primaryColor: "2F80ED", //optional
+	      secondarycolor: "#687B97", //optional
+	      accentTextColor: "#2F80ED", //optional
+	      primaryButtonColor: "#2F80ED" //optional
+	    },
+	    fontFamily: "roboto", //optional
+	    boxShadow: "0px 3px 15px rgba(27, 79, 162, 0.11)" //optional
+	  }
+	}; // UNIPaaS Components Pay Portal config type
+	const payPortal = components.create("payPortal", config);
+	payPortal.mount("#pay_portal");
+</script>
+</body>
+</html>
